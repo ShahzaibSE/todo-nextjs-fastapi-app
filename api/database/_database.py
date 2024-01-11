@@ -1,7 +1,6 @@
 from dotenv import load_dotenv,find_dotenv
 import os
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -19,4 +18,9 @@ engine = create_engine(SQLALCHEMY_DATABASE_URL)
 # Creating database session.
 SessionLoc = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base = declarative_base()
+def get_db():
+    try:
+        db = SessionLoc()
+        yield db
+    finally: 
+        db.close()

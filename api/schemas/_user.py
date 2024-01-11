@@ -9,3 +9,4 @@ class UserCreate(UserBase):
    lname: str
    fname: str
    password: str
+   

@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-from api.v1.user import _router
-from database._database import Base
+from api.v1.user import _router, _create
 
 app: FastAPI = FastAPI()
 

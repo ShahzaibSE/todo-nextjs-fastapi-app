@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
-from api.database._database import Base
+from database._base_class import Base
 
 class User(Base):
     __tablename__ = 'users'
@@ -9,6 +9,6 @@ class User(Base):
     lname = Column(String)
     fname = Column(String)
     email = Column(String, unique=True, index=True)
-    todos = relationship("TODOS", backref="owner", cascade="all, delete-orphan")
+    todos = relationship("TODO", backref="owner", cascade="all, delete-orphan")
 
     
