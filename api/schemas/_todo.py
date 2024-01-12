@@ -4,20 +4,24 @@ from datetime import datetime
 from typing import Optional
 
 
-class ToDoBase(BaseModel):
+class TodoBase(BaseModel):
     text: str
-    completed: Optional[bool] = False
+    is_completed: Optional[bool] = False
 
 
-class ToDoCreate(ToDoBase):
-    pass
-    
-    
-class ToDoCreate(ToDoCreate):
+class TodoCreate(TodoBase):
     pass
 
-class ToDo(ToDoBase):
+
+class TodoUpdate(TodoBase):
+    pass
+
+
+class Todo(TodoBase):
     id: int
-    created_at: datetime
-    updated_at: datetime
+    # created_at: datetime
+    # updated_at: datetime
+
+    # class Config:
+    #     from_attributes = True
     
