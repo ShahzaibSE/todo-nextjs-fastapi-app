@@ -4,3 +4,4 @@ httpie
 requests
 httpx
 passlib
+alembic

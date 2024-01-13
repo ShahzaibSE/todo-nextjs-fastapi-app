@@ -10,7 +10,7 @@ from schemas._todo import TodoCreate
 todo_create_route = APIRouter()
 
 @todo_create_route.post("/create/", response_model=TodoResponse)
-async def createToDo(todo: TodoCreate, db: Session = Depends(get_db)):
+def createToDo(todo: TodoCreate, db: Session = Depends(get_db)):
     # try:
     """
     Create a new todo.

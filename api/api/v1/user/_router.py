@@ -1,11 +1,7 @@
 from fastapi import APIRouter, Body
 from schemas._user import UserCreate
 
-router = APIRouter(
-    prefix="/user",
-    tags=["/user"],
-    responses={404: {"description": "Not found"}},
-)
+router = APIRouter()
 
 @router.post("/test")
 def test(data):
@@ -15,7 +11,6 @@ def test(data):
             "resCode": 200,
             "message": "Tested successfully",
             "isError": False,
-            "data":req
         }
     except:
         return {
