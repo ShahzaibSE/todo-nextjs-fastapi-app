@@ -12,5 +12,5 @@ class UserCreate(UserBase):
    password: str
    
 class User(UserCreate):
-   # created_at: datetime
+   created_at: datetime
    pass

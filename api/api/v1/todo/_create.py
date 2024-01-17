@@ -5,6 +5,12 @@ from sqlalchemy.orm import Session
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Body
 from schemas._todo import TodoCreate
+# from database._base_class import Base
+# from database._database import engine
+
+# metadata = Base.metadata
+
+# metadata.create_all(engine)
 
 # Creating router.
 todo_create_route = APIRouter()
