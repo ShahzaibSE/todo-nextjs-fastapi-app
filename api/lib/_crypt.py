@@ -1,6 +1,6 @@
 from passlib.context import CryptContext
 
-pwd = CryptContext(schemes=["bcrypt"])
+pwd = CryptContext(schemes=["bcrypt"], deprecated=True)
 
 # Get hashed password
 def get_password(plain_password: str):
