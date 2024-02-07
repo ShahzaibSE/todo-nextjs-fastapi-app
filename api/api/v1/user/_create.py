@@ -14,9 +14,10 @@ create_route = APIRouter()
 def signup(user_data: UserCreate, user_db: Session = Depends(get_db)):
     """add new user"""
     try:
-        password = get_password(user_data.password)
-        print("Hashed password")
-        print(password)
+        # password = get_password(user_data.password)
+        # print("Hashed password")
+        # print(password)
+        password = ""
         newUser = User(
             lname=user_data.lname,
             fname=user_data.f_name,
